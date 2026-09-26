@@ -146,7 +146,7 @@ export function PortfolioVideoCard({ item, index }: PortfolioVideoCardProps) {
         )}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 z-10 flex -translate-y-1 flex-col items-start bg-gradient-to-b from-[#071522]/85 via-[#071522]/35 to-transparent p-5 opacity-0 transition-[opacity,transform] duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 motion-reduce:transition-none sm:p-7"
+          className="portfolio-video-overlay pointer-events-none absolute inset-x-0 top-0 z-10 flex -translate-y-1 flex-col items-start bg-gradient-to-b from-[#071522]/85 via-[#071522]/35 to-transparent p-5 opacity-0 transition-[opacity,transform] duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 motion-reduce:transition-none sm:p-7"
         >
           <p className="text-[10px] font-medium uppercase tracking-[0.17em] text-cyan-100/80">
             {item.category}

@@ -5,7 +5,7 @@ export function FinalCtaSection() {
   return (
     <section id="contact" aria-labelledby="contact-heading" className="bg-page pb-16 sm:pb-24 lg:pb-28">
       <Container>
-        <div className="relative isolate grid overflow-hidden rounded-[1.25rem] border border-hero-line bg-hero px-6 py-10 text-hero-ink sm:px-10 sm:py-14 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-12 lg:px-14 lg:py-16">
+        <div className="section-hover section-hover--cta scroll-reveal-emphasis relative isolate grid overflow-hidden rounded-[1.25rem] border border-hero-line bg-hero px-6 py-10 text-hero-ink sm:px-10 sm:py-14 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-12 lg:px-14 lg:py-16">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-2/3 bg-[radial-gradient(ellipse_at_90%_50%,rgba(31,163,195,0.12),transparent_50%)]"

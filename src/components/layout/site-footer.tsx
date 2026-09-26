@@ -7,7 +7,7 @@ import { WhatsAppLink } from "@/components/ui/whatsapp-link";
 export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-panel">
-      <Container className="grid gap-12 py-12 sm:grid-cols-2 sm:py-16 lg:grid-cols-[1.4fr_0.8fr_1fr] lg:gap-16">
+      <Container className="scroll-reveal grid gap-12 py-12 sm:grid-cols-2 sm:py-16 lg:grid-cols-[1.4fr_0.8fr_1fr] lg:gap-16">
         <div>
           <Link
             href="/"

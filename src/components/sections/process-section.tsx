@@ -7,7 +7,7 @@ export function ProcessSection() {
     <section
       id="process"
       aria-labelledby="process-heading"
-      className="bg-page py-16 sm:py-24 lg:py-28"
+      className="section-hover section-hover--process bg-page py-16 sm:py-24 lg:py-28"
     >
       <Container>
         <SectionHeading
@@ -17,7 +17,7 @@ export function ProcessSection() {
           description="A simple path from your idea to an advertising video."
         />
 
-        <ol className="mt-10 grid gap-x-8 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-x-10">
+        <ol className="scroll-reveal mt-10 grid gap-x-8 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-x-10">
           {processSteps.map((step, index) => (
             <li
               key={step.number}

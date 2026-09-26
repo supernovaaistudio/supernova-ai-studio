@@ -27,7 +27,7 @@ function StudioVisual() {
 
 export function HeroSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-hero text-hero-ink">
+    <section className="section-hover section-hover--hero relative isolate overflow-hidden bg-hero text-hero-ink">
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_12%_0%,rgba(20,135,171,0.16),transparent_35%)]"
@@ -36,7 +36,8 @@ export function HeroSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_82%_35%,rgba(20,135,171,0.10),transparent_32%)]"
       />
-      <Container className="relative flex flex-col items-center py-10 sm:py-14 lg:py-16">
+      <div aria-hidden="true" className="hero-work-fade" />
+      <Container className="relative z-10 flex flex-col items-center py-10 sm:py-14 lg:py-16">
         <StudioVisual />
         <h1 className="hero-enter hero-enter-delay mt-5 max-w-[18ch] text-center text-balance text-[clamp(2.35rem,5.5vw,4rem)] font-semibold leading-[0.96] tracking-[-0.065em] transition-[text-shadow] duration-300 ease-out hover:[text-shadow:0_0_24px_rgba(68,178,255,0.24)] motion-reduce:animate-none motion-reduce:transition-none motion-reduce:hover:[text-shadow:none] sm:mt-6">
           Ideas In.{" "}

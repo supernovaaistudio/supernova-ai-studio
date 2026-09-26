@@ -85,8 +85,154 @@ body {
   scrollbar-width: none;
 }
 
+.portfolio-carousel[data-dragging="true"] {
+  cursor: grabbing;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.portfolio-carousel[data-dragging="true"] > * {
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.portfolio-carousel[data-dragging="true"] .portfolio-video-overlay {
+  opacity: 0;
+  transform: translate3d(0, -0.25rem, 0);
+}
+
 .portfolio-carousel::-webkit-scrollbar {
   display: none;
+}
+
+@media (max-width: 767px) {
+  .portfolio-carousel {
+    touch-action: pan-y pinch-zoom;
+  }
+}
+
+.section-tone-page-to-raised {
+  background-image: linear-gradient(
+    to bottom,
+    var(--page) 0%,
+    var(--page) 86%,
+    var(--panel-raised) 100%
+  );
+}
+
+.section-tone-raised-to-hero {
+  background-image: linear-gradient(
+    to bottom,
+    var(--panel-raised) 0%,
+    var(--panel-raised) 88%,
+    var(--hero) 100%
+  );
+}
+
+.section-tone-hero-to-page {
+  background-image: linear-gradient(
+    to bottom,
+    var(--hero) 0%,
+    var(--hero) 86%,
+    var(--page) 100%
+  );
+}
+
+.section-hover {
+  --section-hover-tint: var(--ink);
+  --section-hover-strength: 6%;
+  --section-hover-edge: color-mix(in srgb, var(--brand) 12%, transparent);
+  position: relative;
+  isolation: isolate;
+  transition: box-shadow 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.section-hover::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background-color: color-mix(
+    in srgb,
+    var(--section-hover-tint) var(--section-hover-strength),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.section-hover--hero,
+.section-hover--why {
+  --section-hover-tint: var(--hero-ink);
+}
+
+.section-hover--hero {
+  --section-hover-strength: 6.5%;
+  --section-hover-edge: color-mix(in srgb, var(--hero-ink) 10%, transparent);
+}
+
+.section-hover--work {
+  --section-hover-strength: 9%;
+  --section-hover-edge: color-mix(in srgb, var(--brand) 18%, transparent);
+}
+
+.section-hover--services {
+  --section-hover-strength: 6%;
+}
+
+.section-hover--why {
+  --section-hover-strength: 5.5%;
+  --section-hover-edge: color-mix(in srgb, var(--hero-ink) 9%, transparent);
+}
+
+.section-hover--process {
+  --section-hover-strength: 6%;
+}
+
+.section-hover--cta {
+  --section-hover-tint: var(--hero-ink);
+  --section-hover-strength: 7.5%;
+  --section-hover-edge: color-mix(in srgb, var(--brand) 16%, transparent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .section-hover:hover {
+    box-shadow:
+      inset 0 1px var(--section-hover-edge),
+      inset 0 -1px var(--section-hover-edge);
+    transition-duration: 360ms;
+  }
+
+  .section-hover:hover::before {
+    opacity: 1;
+    transition-duration: 360ms;
+  }
+
+  .section-hover--work #work-heading {
+    transition: color 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .section-hover--work:hover #work-heading {
+    color: color-mix(in srgb, var(--ink) 92%, var(--brand) 8%);
+    transition-duration: 360ms;
+  }
+}
+
+.hero-work-fade {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 0;
+  height: clamp(5rem, 10vw, 8rem);
+  pointer-events: none;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--hero) 34%,
+    var(--page) 100%
+  );
 }
 
 .hero-enter {
@@ -130,7 +276,7 @@ body {
 @keyframes section-reveal {
   from {
     opacity: 0;
-    transform: translate3d(0, 16px, 0);
+    transform: translate3d(0, var(--section-reveal-distance, 24px), 0);
   }
   to {
     opacity: 1;
@@ -138,12 +284,33 @@ body {
   }
 }
 
+.scroll-reveal,
+.scroll-reveal-emphasis {
+  --section-reveal-distance: 24px;
+}
+
+.scroll-reveal-emphasis {
+  --section-reveal-distance: 28px;
+}
+
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .scroll-reveal {
-      animation: section-reveal linear both;
+    .scroll-reveal,
+    .scroll-reveal-emphasis {
+      animation: section-reveal 680ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
       animation-timeline: view();
-      animation-range: entry 0% entry 28%;
+      animation-range: entry 0% entry 30%;
+    }
+
+    .scroll-reveal-emphasis {
+      animation-duration: 720ms;
+    }
+
+    @media (max-width: 639px) {
+      .scroll-reveal,
+      .scroll-reveal-emphasis {
+        --section-reveal-distance: 16px;
+      }
     }
   }
 }
@@ -153,10 +320,16 @@ body {
     scroll-behavior: auto;
   }
 
-  .scroll-reveal {
+  .scroll-reveal,
+  .scroll-reveal-emphasis {
     animation: none !important;
     opacity: 1;
     transform: none;
+  }
+
+  .section-hover,
+  .section-hover::before {
+    transition-duration: 0.01ms !important;
   }
 
   *,

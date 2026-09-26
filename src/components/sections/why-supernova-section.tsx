@@ -7,7 +7,7 @@ export function WhySuperNovaSection() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="relative isolate overflow-hidden bg-hero py-16 text-hero-ink sm:py-24 lg:py-28"
+      className="section-hover section-hover--why section-tone-hero-to-page relative isolate overflow-hidden bg-hero py-16 text-hero-ink sm:py-24 lg:py-28"
     >
       <div
         aria-hidden="true"
@@ -24,7 +24,7 @@ export function WhySuperNovaSection() {
           />
         </div>
 
-        <div className="grid gap-x-8 sm:grid-cols-2 sm:gap-x-10 lg:gap-x-14">
+        <div className="scroll-reveal grid gap-x-8 sm:grid-cols-2 sm:gap-x-10 lg:gap-x-14">
           {studioPrinciples.map((principle) => (
             <article
               key={principle.number}

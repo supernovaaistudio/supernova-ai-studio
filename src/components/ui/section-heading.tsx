@@ -18,7 +18,11 @@ export function SectionHeading({
   const isInverse = tone === "inverse";
 
   return (
-    <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
+    <div
+      className={`scroll-reveal ${
+        align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"
+      }`}
+    >
       <p
         className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-brand"
       >

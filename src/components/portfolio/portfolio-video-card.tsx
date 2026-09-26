@@ -48,8 +48,8 @@ export function PortfolioVideoCard({ item, index }: PortfolioVideoCardProps) {
   const demoNumber = String(index + 1).padStart(2, "0");
 
   return (
-    <article className="group overflow-hidden rounded-[1.4rem] border border-line bg-panel shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]">
-      <div className="relative aspect-[16/10] overflow-hidden bg-hero">
+    <article className="group relative flex w-[min(82vw,23rem)] shrink-0 snap-start flex-col overflow-hidden rounded-[1.2rem] border border-line bg-panel transition-[transform,border-color,box-shadow] duration-300 ease-out md:w-auto md:hover:-translate-y-1 md:hover:scale-[1.01] md:hover:border-brand/45 md:hover:shadow-[var(--shadow-soft)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100">
+      <div className="relative aspect-[9/16] shrink-0 overflow-hidden bg-hero">
         {embedUrl ? (
           <iframe
             src={embedUrl}
@@ -85,11 +85,11 @@ export function PortfolioVideoCard({ item, index }: PortfolioVideoCardProps) {
             </div>
 
             <div className="absolute inset-0 flex flex-col justify-between p-5 sm:p-7">
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70 sm:text-xs">
+              <div className="flex items-start justify-between gap-3">
+                <span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-[10px]">
                   Demo slot · {demoNumber}
                 </span>
-                <span className="rounded-full border border-white/20 bg-black/10 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-white/80 backdrop-blur sm:text-[10px]">
+                <span className="text-right text-[9px] font-semibold uppercase tracking-[0.13em] text-white/65 sm:text-[10px]">
                   YouTube URL needed
                 </span>
               </div>
@@ -98,7 +98,7 @@ export function PortfolioVideoCard({ item, index }: PortfolioVideoCardProps) {
                 <p className="text-[10px] font-medium uppercase tracking-[0.19em] text-cyan-100/75">
                   {item.category}
                 </p>
-                <p className="mt-2 text-3xl font-semibold leading-none tracking-[-0.045em] text-white sm:text-4xl">
+                <p className="mt-2 text-[2.1rem] font-semibold leading-[0.9] tracking-[-0.055em] text-white sm:text-4xl lg:text-[2.6rem]">
                   {item.visual === "orbit" ? "PRODUCT" : "SOCIAL"}
                   <span className="block text-white/55">VIDEO</span>
                 </p>
@@ -112,7 +112,7 @@ export function PortfolioVideoCard({ item, index }: PortfolioVideoCardProps) {
                   type="button"
                   aria-label={`Play ${item.title} placeholder preview`}
                   onClick={() => setShowPlaceholderInfo(true)}
-                  className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/50 bg-white/15 text-white shadow-lg backdrop-blur transition duration-200 hover:scale-105 hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:h-14 sm:w-14"
+                  className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/45 bg-white/10 text-white transition-[background-color,transform] duration-200 hover:scale-105 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transition-none motion-reduce:hover:scale-100 sm:h-14 sm:w-14"
                 >
                   <PlayIcon />
                 </button>
@@ -144,26 +144,31 @@ export function PortfolioVideoCard({ item, index }: PortfolioVideoCardProps) {
             ) : null}
           </div>
         )}
-      </div>
-
-      <div className="flex items-start justify-between gap-5 p-5 sm:p-6">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 z-10 flex -translate-y-1 flex-col items-start bg-gradient-to-b from-[#071522]/85 via-[#071522]/35 to-transparent p-5 opacity-0 transition-[opacity,transform] duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 motion-reduce:transition-none sm:p-7"
+        >
+          <p className="text-[10px] font-medium uppercase tracking-[0.17em] text-cyan-100/80">
             {item.category}
           </p>
-          <h3 className="mt-2 text-lg font-semibold tracking-tight text-ink sm:text-xl">
+          <p className="mt-2 text-xl font-semibold leading-tight tracking-[-0.03em] text-white sm:text-2xl">
+            {item.title}
+          </p>
+        </div>
+      </div>
+
+      <div className="flex flex-1 items-start justify-between gap-4 p-4 sm:p-5">
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-brand sm:text-[11px]">
+            {item.category}
+          </p>
+          <h3 className="mt-2 text-lg font-semibold tracking-[-0.025em] text-ink sm:text-xl">
             {item.title}
           </h3>
-          <p className="mt-2 text-sm leading-6 text-muted">{item.description}</p>
+          <p className="mt-2 max-w-sm text-[13px] leading-5 text-muted sm:text-sm sm:leading-6">
+            {item.description}
+          </p>
         </div>
-        <span
-          aria-hidden="true"
-          className="mt-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line text-muted transition group-hover:border-brand group-hover:text-brand"
-        >
-          <svg viewBox="0 0 20 20" fill="none" className="h-4 w-4">
-            <path d="M5.5 14.5 14.5 5.5m0 0H7m7.5 0V13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
       </div>
     </article>
   );

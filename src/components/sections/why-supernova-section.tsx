@@ -7,7 +7,7 @@ export function WhySuperNovaSection() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="relative isolate overflow-hidden bg-hero py-20 text-hero-ink sm:py-28"
+      className="relative isolate overflow-hidden bg-hero py-16 text-hero-ink sm:py-24 lg:py-28"
     >
       <div
         aria-hidden="true"
@@ -24,21 +24,22 @@ export function WhySuperNovaSection() {
           />
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-x-8 sm:grid-cols-2 sm:gap-x-10 lg:gap-x-14">
           {studioPrinciples.map((principle) => (
             <article
               key={principle.number}
-              className="rounded-[1.25rem] border border-hero-line bg-hero-raised/65 p-5 transition-colors duration-200 hover:bg-hero-raised sm:p-6"
+              className="group border-t border-hero-line py-6 transition-colors duration-300 hover:border-brand/65 motion-reduce:transition-none sm:py-7"
             >
-              <p className="text-xs font-semibold tracking-[0.14em] text-brand">
+              <p className="font-mono text-xs font-medium tracking-[0.14em] text-brand">
                 {principle.number}
               </p>
-              <h3 className="mt-5 text-lg font-semibold tracking-tight text-hero-ink">
+              <h3 className="mt-7 text-xl font-semibold tracking-[-0.025em] text-hero-ink sm:text-2xl">
                 {principle.title}
               </h3>
-              <p className="mt-2 text-sm leading-6 text-hero-muted">
+              <p className="mt-3 max-w-sm text-sm leading-6 text-hero-muted sm:text-[15px]">
                 {principle.description}
               </p>
+              <div className="mt-6 h-px w-7 bg-brand/70 transition-[width] duration-300 group-hover:w-12 motion-reduce:transition-none" />
             </article>
           ))}
         </div>

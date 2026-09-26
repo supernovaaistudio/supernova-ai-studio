@@ -8,7 +8,7 @@ export function ServicesSection() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="bg-panel-raised py-20 sm:py-28"
+      className="bg-panel-raised py-16 sm:py-24 lg:py-28"
     >
       <Container>
         <div className="flex flex-col justify-between gap-7 lg:flex-row lg:items-end">
@@ -23,7 +23,7 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4">
+        <div className="mt-8 grid gap-x-8 sm:grid-cols-2 sm:gap-x-10 lg:mt-12 lg:gap-x-14">
           {services.map((service) => (
             <ServiceCard key={service.number} {...service} />
           ))}

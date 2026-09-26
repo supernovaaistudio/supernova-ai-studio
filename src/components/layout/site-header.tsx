@@ -58,7 +58,7 @@ function HeaderWhatsAppLink({
       href={getWhatsAppHref()}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex min-h-10 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg bg-brand px-3.5 text-[13px] font-medium text-brand-foreground transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-brand/90 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-brand motion-reduce:transition-none ${className}`}
+      className={`inline-flex min-h-10 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg bg-brand px-3.5 text-[13px] font-medium text-brand-foreground shadow-[0_5px_16px_rgba(8,119,201,0.14)] transition-[background-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:scale-[1.01] hover:bg-brand/90 hover:shadow-[0_8px_22px_rgba(8,119,201,0.23)] active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-brand motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100 ${className}`}
     >
       <Image
         src="/whatsapp.png"

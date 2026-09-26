@@ -15,7 +15,7 @@ export function WhatsAppLink({
       href={getWhatsAppHref()}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-foreground shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand ${className}`}
+      className={`inline-flex min-h-12 items-center justify-center gap-2.5 rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-brand-foreground shadow-[0_6px_18px_rgba(8,119,201,0.16)] transition-[background-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:scale-[1.015] hover:shadow-[0_10px_26px_rgba(8,119,201,0.24)] active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100 ${className}`}
     >
       <Image
         src="/whatsapp.png"

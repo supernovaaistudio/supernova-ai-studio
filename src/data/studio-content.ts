@@ -51,12 +51,12 @@ export const studioPrinciples = [
 export const processSteps = [
   {
     number: "01",
-    title: "Tell Us Your Idea",
+    title: "Idea",
     description: "Tell us about the product, service, or idea you want to advertise.",
   },
   {
     number: "02",
-    title: "We Build the Concept",
+    title: "Creative Direction",
     description: "We shape a creative direction for the video.",
   },
   {
@@ -66,7 +66,7 @@ export const processSteps = [
   },
   {
     number: "04",
-    title: "Final Ad Video",
+    title: "Final Ad",
     description: "The finished advertising video is ready for your review.",
   },
 ] as const;

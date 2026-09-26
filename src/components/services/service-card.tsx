@@ -12,20 +12,24 @@ export function ServiceCard({
   marker,
 }: ServiceCardProps) {
   return (
-    <article className="group flex min-h-[250px] flex-col rounded-[1.35rem] border border-line bg-panel p-6 transition duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-[var(--shadow-soft)] sm:p-7">
-      <div className="flex items-center justify-between">
-        <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-sm font-semibold text-brand">
+    <article className="group flex min-h-[230px] flex-col border-t border-line py-6 transition-colors duration-300 hover:border-brand/60 motion-reduce:transition-none sm:min-h-[250px] sm:py-8">
+      <div className="flex items-center justify-between gap-4">
+        <span className="font-mono text-xs font-medium tracking-[0.12em] text-brand">
           {number}
         </span>
-        <span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-muted sm:text-[10px]">
+        <span className="text-[10px] font-medium uppercase tracking-[0.17em] text-muted">
           {marker}
         </span>
       </div>
-      <div className="mt-auto pt-12">
-        <h3 className="text-xl font-semibold tracking-tight text-ink">{title}</h3>
-        <p className="mt-2 max-w-xs text-sm leading-6 text-muted">{description}</p>
+      <div className="mt-auto pt-10">
+        <h3 className="text-2xl font-semibold tracking-[-0.04em] text-ink sm:text-[1.75rem]">
+          {title}
+        </h3>
+        <p className="mt-3 max-w-sm text-sm leading-6 text-muted sm:text-[15px]">
+          {description}
+        </p>
       </div>
-      <div className="mt-6 h-px w-10 bg-brand transition-all duration-300 group-hover:w-full" />
+      <div className="mt-6 h-px w-8 bg-brand/75 transition-[width] duration-300 group-hover:w-16 motion-reduce:transition-none" />
     </article>
   );
 }

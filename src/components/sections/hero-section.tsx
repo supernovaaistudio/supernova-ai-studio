@@ -5,7 +5,7 @@ import { getWhatsAppHref } from "@/config/site";
 function StudioVisual() {
   return (
     <div
-      className="hero-enter hero-enter-delay mx-auto w-full max-w-[560px] motion-reduce:animate-none"
+      className="hero-enter hero-enter-delay mx-auto w-full max-w-[920px] motion-reduce:animate-none"
     >
       <div
         aria-hidden="true"
@@ -36,7 +36,7 @@ export function HeroSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_82%_35%,rgba(20,135,171,0.10),transparent_32%)]"
       />
-      <Container className="relative flex flex-col items-center py-12 sm:py-16 lg:py-20">
+      <Container className="relative flex flex-col items-center py-10 sm:py-14 lg:py-16">
         <StudioVisual />
         <h1 className="hero-enter hero-enter-delay mt-5 max-w-[18ch] text-center text-balance text-[clamp(2.35rem,5.5vw,4rem)] font-semibold leading-[0.96] tracking-[-0.065em] transition-[text-shadow] duration-300 ease-out hover:[text-shadow:0_0_24px_rgba(68,178,255,0.24)] motion-reduce:animate-none motion-reduce:transition-none motion-reduce:hover:[text-shadow:none] sm:mt-6">
           Ideas In.{" "}
@@ -51,7 +51,7 @@ export function HeroSection() {
             href={getWhatsAppHref()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-brand px-5 text-sm font-semibold text-brand-foreground transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-brand/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand motion-reduce:transition-none sm:w-auto"
+            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-brand px-5 text-sm font-semibold text-brand-foreground shadow-[0_6px_18px_rgba(8,119,201,0.18)] transition-[background-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:scale-[1.015] hover:bg-brand/90 hover:shadow-[0_10px_26px_rgba(8,119,201,0.25)] active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100 sm:w-auto"
           >
             <Image
               src="/whatsapp.png"
@@ -65,7 +65,7 @@ export function HeroSection() {
           </a>
           <a
             href="#work"
-            className="group inline-flex min-h-12 items-center justify-center gap-2 px-3 text-sm font-medium text-hero-muted transition-colors duration-200 hover:text-hero-ink focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand motion-reduce:transition-none"
+            className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[color:var(--hero-line)] bg-hero-raised/35 px-4 text-sm font-medium text-hero-muted transition-[background-color,border-color,color] duration-200 hover:border-cyan-100/30 hover:bg-hero-raised hover:text-hero-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand motion-reduce:transition-none"
           >
             View Our Work
             <svg

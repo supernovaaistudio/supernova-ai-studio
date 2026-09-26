@@ -7,7 +7,7 @@ export function ProcessSection() {
     <section
       id="process"
       aria-labelledby="process-heading"
-      className="bg-page py-20 sm:py-28"
+      className="bg-page py-16 sm:py-24 lg:py-28"
     >
       <Container>
         <SectionHeading
@@ -17,31 +17,35 @@ export function ProcessSection() {
           description="A simple path from your idea to an advertising video."
         />
 
-        <div className="relative mt-10 lg:mt-14">
-          <div
-            aria-hidden="true"
-            className="absolute left-[10%] right-[10%] top-7 hidden h-px bg-line lg:block"
-          />
-          <ol className="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
-            {processSteps.map((step) => (
-              <li key={step.number} className="relative rounded-2xl border border-line bg-panel p-5 sm:p-6 lg:border-0 lg:bg-transparent lg:p-0">
-                <div className="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-6">
-                  <span className="relative z-10 inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-brand/40 bg-panel text-sm font-semibold text-brand shadow-sm">
-                    {step.number}
+        <ol className="mt-10 grid gap-x-8 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-x-10">
+          {processSteps.map((step, index) => (
+            <li
+              key={step.number}
+              className="group relative border-t border-line pb-7 pt-5 sm:pb-10 sm:pt-6 lg:pb-0"
+            >
+              <span
+                aria-hidden="true"
+                className="absolute left-0 top-[-1px] h-px w-9 bg-brand/75 transition-[width] duration-300 group-hover:w-16 motion-reduce:transition-none"
+              />
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs font-medium tracking-[0.12em] text-brand">
+                  {step.number}
+                </span>
+                {index < processSteps.length - 1 ? (
+                  <span aria-hidden="true" className="hidden text-sm text-muted/70 lg:inline">
+                    →
                   </span>
-                  <div>
-                    <h3 className="text-base font-semibold tracking-tight text-ink sm:text-lg">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
+                ) : null}
+              </div>
+              <h3 className="mt-8 text-xl font-semibold tracking-[-0.035em] text-ink sm:text-2xl">
+                {step.title}
+              </h3>
+              <p className="mt-3 max-w-xs text-sm leading-6 text-muted sm:text-[15px]">
+                {step.description}
+              </p>
+            </li>
+          ))}
+        </ol>
       </Container>
     </section>
   );

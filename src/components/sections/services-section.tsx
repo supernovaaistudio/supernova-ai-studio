@@ -8,7 +8,7 @@ export function ServicesSection() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="section-hover section-hover--services section-tone-raised-to-hero bg-panel-raised py-16 sm:py-24 lg:py-28"
+      className="section-hover section-hover--services bg-panel-raised py-16 sm:py-24 lg:py-28"
     >
       <Container>
         <div className="flex flex-col justify-between gap-7 lg:flex-row lg:items-end">

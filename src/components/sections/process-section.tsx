@@ -7,7 +7,7 @@ export function ProcessSection() {
     <section
       id="process"
       aria-labelledby="process-heading"
-      className="section-hover section-hover--process bg-page py-16 sm:py-24 lg:py-28"
+      className="section-hover section-hover--process section-tone-process bg-page py-16 sm:py-24 lg:py-28"
     >
       <Container>
         <SectionHeading

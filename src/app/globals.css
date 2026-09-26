@@ -11,6 +11,8 @@
   --brand: #0877c9;
   --brand-foreground: #ffffff;
   --brand-soft: #e0f4f8;
+  --surface-transition-cool: #d7e5eb;
+  --surface-process-light: #e8f0f4;
   --hero: #071522;
   --hero-raised: #102638;
   --hero-ink: #f6fbff;
@@ -121,15 +123,6 @@ body {
   );
 }
 
-.section-tone-raised-to-hero {
-  background-image: linear-gradient(
-    to bottom,
-    var(--panel-raised) 0%,
-    var(--panel-raised) 88%,
-    var(--hero) 100%
-  );
-}
-
 .section-tone-hero-to-page {
   background-image: linear-gradient(
     to bottom,
@@ -139,10 +132,20 @@ body {
   );
 }
 
+[data-theme="light"] .section-tone-hero-to-page {
+  background-image: none;
+}
+
+[data-theme="light"] .section-tone-process {
+  background-color: var(--surface-process-light);
+}
+
 .section-hover {
   --section-hover-tint: var(--ink);
   --section-hover-strength: 6%;
   --section-hover-edge: color-mix(in srgb, var(--brand) 12%, transparent);
+  --section-hover-edge-top: var(--section-hover-edge);
+  --section-hover-edge-bottom: var(--section-hover-edge);
   position: relative;
   isolation: isolate;
   transition: box-shadow 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -173,6 +176,14 @@ body {
   --section-hover-edge: color-mix(in srgb, var(--hero-ink) 10%, transparent);
 }
 
+.section-hover--hero,
+.section-hover--work,
+.section-hover--services,
+.section-hover--why {
+  --section-hover-edge-top: transparent;
+  --section-hover-edge-bottom: transparent;
+}
+
 .section-hover--work {
   --section-hover-strength: 9%;
   --section-hover-edge: color-mix(in srgb, var(--brand) 18%, transparent);
@@ -200,8 +211,8 @@ body {
 @media (hover: hover) and (pointer: fine) {
   .section-hover:hover {
     box-shadow:
-      inset 0 1px var(--section-hover-edge),
-      inset 0 -1px var(--section-hover-edge);
+      inset 0 1px var(--section-hover-edge-top),
+      inset 0 -1px var(--section-hover-edge-bottom);
     transition-duration: 360ms;
   }
 
@@ -218,21 +229,6 @@ body {
     color: color-mix(in srgb, var(--ink) 92%, var(--brand) 8%);
     transition-duration: 360ms;
   }
-}
-
-.hero-work-fade {
-  position: absolute;
-  inset-inline: 0;
-  bottom: 0;
-  z-index: 0;
-  height: clamp(5rem, 10vw, 8rem);
-  pointer-events: none;
-  background-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    var(--hero) 34%,
-    var(--page) 100%
-  );
 }
 
 .hero-enter {
